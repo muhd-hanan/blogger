@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Blogger</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <section id="login">
+        <section class="wrapper">
+            <div class="container">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <div class="logo">
+                        <img src="{% static './images/logo.png' %}" alt="logo" />
+                    </div>
+                    <h1>Login Now</h1>
+                    <div class="form-control">
+                        <input type="text" name="username" id="" placeholder="Enter username">
+                    </div>
+                    <div class="form-control">
+                        <input type="password" name="password" id="" placeholder="Enter password">
+                    </div>
+                    <p>{{error}}</p>
+                    <p class="text-red ">Don't have an account? <a href="register.html">Register</a></p>
+                    
+                    <div class="btn">
+                        <input type="submit" value="Login">
+                    </div>
+                </form>
+            </div>
+        </section>
+    </section>
+    
+</body>
+</html>

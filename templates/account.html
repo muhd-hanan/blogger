@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
+    <title>Blogger</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <header>
+        <section class="wrapper">
+            <div class="left">
+                <h1><a href="{% url 'web:index' %}"><img src="{% static 'images/logo.png' %}" alt="logo"></a></h1>
+            </div>
+            <div class="middle">
+                <form action="">
+                    <div>
+                        <input type="search" placeholder="Search blog...">
+                        <img src="{% static 'images/search.png' %}" alt="search" />
+                    </div>
+                </form>
+            </div>
+            <div class="right">
+                <ul>
+                    <li><a href="{% url 'web:index' %}">Home</a></li>
+                    <li><a href="{% url 'web:create' %}">Create</a></li>
+                    <li><a href="{% url 'web:account' %}">Account</a></li>
+                </ul>
+            </div>
+        </section>
+    </header>
+
+    <section id="blog-list">
+        <section class="wrapper">
+            <div class="top">
+                <h1>My Blogs</h1>
+                <a href="#">Create</a>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Title</th>
+                        <th>Date</th>
+                        <th>View</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <img src="{% static './images/blog.png' %}" alt="blog">
+                        </td>
+                        <td>Lorem ipsum dolor sit amet consectetur.</td>
+                        <td>12 May 2023</td>
+                        <td>
+                            <a href="#" class="view">View</a>
+                        </td>
+                        <td>
+                            <a href="#" class="edit">Edit</a>
+                        </td>
+                        <td>
+                            <a href="#" class="delete">Delete</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="{% static './images/blog.png' %}" alt="blog">
+                        </td>
+                        <td>Lorem ipsum dolor sit amet consectetur.</td>
+                        <td>12 May 2023</td>
+                        <td>
+                            <a href="#" class="view">View</a>
+                        </td>
+                        <td>
+                            <a href="#" class="edit">Edit</a>
+                        </td>
+                        <td>
+                            <a href="#" class="delete">Delete</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="{% static './images/blog.png' %}" alt="blog">
+                        </td>
+                        <td>Lorem ipsum dolor sit amet consectetur.</td>
+                        <td>12 May 2023</td>
+                        <td>
+                            <a href="#" class="view">View</a>
+                        </td>
+                        <td>
+                            <a href="#" class="edit">Edit</a>
+                        </td>
+                        <td>
+                            <a href="#" class="delete">Delete</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="{% static './images/blog.png' %}" alt="blog">
+                        </td>
+                        <td>Lorem ipsum dolor sit amet consectetur.</td>
+                        <td>12 May 2023</td>
+                        <td>
+                            <a href="#" class="view">View</a>
+                        </td>
+                        <td>
+                            <a href="#" class="edit">Edit</a>
+                        </td>
+                        <td>
+                            <a href="#" class="delete">Delete</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="{% static './images/blog.png' %}" alt="blog">
+                        </td>
+                        <td>Lorem ipsum dolor sit amet consectetur.</td>
+                        <td>12 May 2023</td>
+                        <td>
+                            <a href="#" class="view">View</a>
+                        </td>
+                        <td>
+                            <a href="#" class="edit">Edit</a>
+                        </td>
+                        <td>
+                            <a href="#" class="delete">Delete</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="{% static './images/blog.png' %}" alt="blog">
+                        </td>
+                        <td>Lorem ipsum dolor sit amet consectetur.</td>
+                        <td>12 May 2023</td>
+                        <td>
+                            <a href="#" class="view">View</a>
+                        </td>
+                        <td>
+                            <a href="#" class="edit">Edit</a>
+                        </td>
+                        <td>
+                            <a href="#" class="delete">Delete</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="{% static './images/blog.png' %}" alt="blog">
+                        </td>
+                        <td>Lorem ipsum dolor sit amet consectetur.</td>
+                        <td>12 May 2023</td>
+                        <td>
+                            <a href="#" class="view">View</a>
+                        </td>
+                        <td>
+                            <a href="#" class="edit">Edit</a>
+                        </td>
+                        <td>
+                            <a href="#" class="delete">Delete</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="bottom">
+                <div class="pagination">
+                    <a href="#" class="prev">
+                        <img src="{% static 'images/left-arrow.png' %}" alt="prev">
+                    </a>
+                    <a href="#" class="active">1</a>
+                    <a href="#">2</a>
+                    <span>...</span>
+                    <a href="#">7</a>
+                    <a href="#">8</a>
+                    <a href="#" class="next">
+                        <img src="{% static 'images/right-arrow.png' %}" alt="next">
+                    </a>
+                </div>
+            </div>
+        </section>
+    </section>
+
+
+</body>
+</html>

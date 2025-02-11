@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
+    <title>Blogger</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <header>
+        <section class="wrapper">
+            <div class="left">
+                <h1><a href="{% url 'web:index' %}"><img src="{% static 'images/logo.png' %}" alt="logo"></a></h1>
+            </div>
+            <div class="middle">
+                <form action="">
+                    <div>
+                        <input type="search" placeholder="Search blog...">
+                        <img src="{% static 'images/search.png' %}" alt="search" />
+                    </div>
+                </form>
+            </div>
+            <div class="right">
+                <ul>
+                    <li><a href="{% url 'web:index' %}">Home</a></li>
+                    <li><a href="{% url 'web:create' %}">Create</a></li>
+                    <li><a href="{% url 'web:account' %}">Account</a></li>
+                </ul>
+            </div>
+        </section>
+    </header>
+
+    <section id="category">
+        <section class="wrapper">
+            <ul>
+                <li><a class="active" href="#">Food</a></li>
+                <li><a href="#">Health</a></li>
+                <li><a href="#">Place</a></li>
+                <li><a href="#">Technology</a></li>
+                <li><a href="#">Education</a></li>
+            </ul>
+        </section>
+    </section>
+
+    <section id="blogs">
+        <section class="wrapper">
+            <div class="left">
+                <div class="top">
+                    <div class="card">
+                        <img src="{% static 'images/blog.png' %}" alt="blog-image">
+                        <h3>
+                            <a href="{% url 'web:blog' %}">Lorem ipsum dolor sit.</a>
+                        </h3>
+                        <div>
+                            <span>Adil CP</span>
+                            <span>20 May 2023</span>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet voluptate deleniti placeat consectetur optio facere. Expedita, nobis? Minus, numquam harum.</p>
+                        <ul>
+                            <li>Food</li>
+                            <li>Healthy</li>
+                            <li>Spicy</li>
+                            <li>Lorem</li>
+                            <li>Spicy</li>
+                            <li>Spicy</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <img src="{% static 'images/blog.png' %}" alt="blog-image">
+                        <h3>
+                            <a href="blog.html">Lorem ipsum dolor sit.</a>
+                        </h3>
+                        <div>
+                            <span>Adil CP</span>
+                            <span>20 May 2023</span>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet voluptate deleniti placeat consectetur optio facere. Expedita, nobis? Minus, numquam harum.</p>
+                        <ul>
+                            <li>Food</li>
+                            <li>Healthy</li>
+                            <li>Spicy</li>
+                            <li>Lorem</li>
+                            <li>Spicy</li>
+                            <li>Spicy</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <img src="{% static 'images/blog.png' %}" alt="blog-image">
+                        <h3>
+                            <a href="blog.html">Lorem ipsum dolor sit.</a>
+                        </h3>
+                        <div>
+                            <span>Adil CP</span>
+                            <span>20 May 2023</span>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet voluptate deleniti placeat consectetur optio facere. Expedita, nobis? Minus, numquam harum.</p>
+                        <ul>
+                            <li>Food</li>
+                            <li>Healthy</li>
+                            <li>Spicy</li>
+                            <li>Lorem</li>
+                            <li>Spicy</li>
+                            <li>Spicy</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <img src="{% static 'images/blog.png' %}" alt="blog-image">
+                        <h3>
+                            <a href="blog.html">Lorem ipsum dolor sit.</a>
+                        </h3>
+                        <div>
+                            <span>Adil CP</span>
+                            <span>20 May 2023</span>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet voluptate deleniti placeat consectetur optio facere. Expedita, nobis? Minus, numquam harum.</p>
+                        <ul>
+                            <li>Food</li>
+                            <li>Healthy</li>
+                            <li>Spicy</li>
+                            <li>Lorem</li>
+                            <li>Spicy</li>
+                            <li>Spicy</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <img src="{% static 'images/blog.png' %}" alt="blog-image">
+                        <h3>
+                            <a href="blog.html">Lorem ipsum dolor sit.</a>
+                        </h3>
+                        <div>
+                            <span>Adil CP</span>
+                            <span>20 May 2023</span>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet voluptate deleniti placeat consectetur optio facere. Expedita, nobis? Minus, numquam harum.</p>
+                        <ul>
+                            <li>Food</li>
+                            <li>Healthy</li>
+                            <li>Spicy</li>
+                            <li>Lorem</li>
+                            <li>Spicy</li>
+                            <li>Spicy</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="pagination">
+                        <a href="#" class="prev">
+                            <img src="{% static 'images/left-arrow.png' %}" alt="prev">
+                        </a>
+                        <a href="#" class="active">1</a>
+                        <a href="#">2</a>
+                        <span>...</span>
+                        <a href="#">7</a>
+                        <a href="#">8</a>
+                        <a href="#" class="next">
+                            <img src="{% static 'images/right-arrow.png' %}" alt="next">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right">
+                <h1>Fiter Blogs</h1>
+                <form action="">
+                    <div class="sort">
+                        <h3>Sort by</h3>
+                        <div>
+                            <input type="radio" name="" id="">
+                            <span>Recently Added</span>
+                        </div>
+                        <div>
+                            <input type="radio" name="" id="">
+                            <span>A-Z Ascending</span>
+                        </div>
+                        <div>
+                            <input type="radio" name="" id="">
+                            <span>A-Z Descending</span>
+                        </div>
+                    </div>
+                    <div class="author">
+                        <h3>By Author</h3>
+                        <div>
+                            <input type="checkbox" name="" id="">
+                            <span>Adil cp</span>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="" id="">
+                            <span>Arun T</span>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="" id="">
+                            <span>Prabin Prakash</span>
+                        </div>
+                    </div>
+                    <div class="tags">
+                        <h3>By Tags</h3>
+                        <div>
+                            <input type="checkbox" name="" id="">
+                            <span>Food</span>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="" id="">
+                            <span>Healthy</span>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="" id="">
+                            <span>Hospital</span>
+                        </div>
+                    </div>
+                    <div class="submit">
+                        <input type="submit" value="Filter">
+                    </div>
+                </form>
+            </div>
+        </section>
+    </section>
+    
+</body>
+</html>

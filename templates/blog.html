@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
+    <title>Blogger</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <header>
+        <section class="wrapper">
+            <div class="left">
+                <h1><a href="index.html"><img src="{% static 'images/logo.png' %}" alt="logo"></a></h1>
+            </div>
+            <div class="middle">
+                <form action="">
+                    <div>
+                        <input type="search" placeholder="Search blog...">
+                        <img src="{% static 'images/search.png' %}" alt="search" />
+                    </div>
+                </form>
+            </div>
+            <div class="right">
+                <ul>
+                    <li><a href="{% url 'web:index' %}">Home</a></li>
+                    <li><a href="{% url 'web:create' %}">Create</a></li>
+                    <li><a href="{% url 'web:account' %}">Account</a></li>
+                </ul>
+            </div>
+        </section>
+    </header>
+
+    <section id="blog-details">
+        <section class="wrapper">
+            <div class="left">
+                <h1>Lorem ipsum dolor sit amet consectetur.</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt harum repudiandae minus quasi itaque doloribus at eum aliquam sequi laboriosam?</p>
+                <div>
+                    <p>Adil CP</p>
+                    <p>23 May 2023</p>
+                </div>
+                <img src="{% static 'images/blog.png' %}" alt="blog">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio perspiciatis commodi nemo voluptas, saepe nihil? Beatae officia dolorem suscipit provident sint fugiat nostrum nemo. Quisquam aliquam error totam nam nulla in pariatur atque dicta ullam sint quod esse veritatis cupiditate, eum eveniet voluptates non tenetur!</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio perspiciatis commodi nemo voluptas, saepe nihil? Beatae officia dolorem suscipit provident sint fugiat nostrum nemo. Quisquam aliquam error totam nam nulla in pariatur atque dicta ullam sint quod esse veritatis cupiditate, eum eveniet voluptates non tenetur!</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio perspiciatis commodi nemo voluptas, saepe nihil? Beatae officia dolorem suscipit provident sint fugiat nostrum nemo. Quisquam aliquam error totam nam nulla in pariatur atque dicta ullam sint quod esse veritatis cupiditate, eum eveniet voluptates non tenetur!</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio perspiciatis commodi nemo voluptas, saepe nihil? Beatae officia dolorem suscipit provident sint fugiat nostrum nemo. Quisquam aliquam error totam nam nulla in pariatur atque dicta ullam sint quod esse veritatis cupiditate, eum eveniet voluptates non tenetur!</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio perspiciatis commodi nemo voluptas, saepe nihil? Beatae officia dolorem suscipit provident sint fugiat nostrum nemo. Quisquam aliquam error totam nam nulla in pariatur atque dicta ullam sint quod esse veritatis cupiditate, eum eveniet voluptates non tenetur!</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio perspiciatis commodi nemo voluptas, saepe nihil? Beatae officia dolorem suscipit provident sint fugiat nostrum nemo. Quisquam aliquam error totam nam nulla in pariatur atque dicta ullam sint quod esse veritatis cupiditate, eum eveniet voluptates non tenetur!</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio perspiciatis commodi nemo voluptas, saepe nihil? Beatae officia dolorem suscipit provident sint fugiat nostrum nemo. Quisquam aliquam error totam nam nulla in pariatur atque dicta ullam sint quod esse veritatis cupiditate, eum eveniet voluptates non tenetur!</p>
+            </div>
+            <div class="right">
+                <h3>Recent Blogs</h3>
+                <div>
+                    <img src="{% static 'images/blog.png' %}" alt="blog">
+                    <a href="blog.html">
+                        <h3>Lorem ipsum dolor sit amet consectetur.</h3>
+                    </a>
+                </div>
+                <div>
+                    <img src="{% static 'images/blog.png' %}" alt="blog">
+                    <a href="blog.html">
+                        <h3>Lorem ipsum dolor sit amet consectetur.</h3>
+                    </a>
+                </div>
+                <div>
+                    <img src="{% static 'images/blog.png' %}" alt="blog">
+                    <a href="blog.html">
+                        <h3>Lorem ipsum dolor sit amet consectetur.</h3>
+                    </a>
+                </div>
+                <div>
+                    <img src="{% static 'images/blog.png' %}" alt="blog">
+                    <a href="blog.html">
+                        <h3>Lorem ipsum dolor sit amet consectetur.</h3>
+                    </a>
+                </div>
+                <div>
+                    <img src="{% static 'images/blog.png' %}" alt="blog">
+                    <a href="blog.html">
+                        <h3>Lorem ipsum dolor sit amet consectetur.</h3>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </section>
+
+
+</body>
+</html>

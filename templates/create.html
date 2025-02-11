@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
+    <title>Blogger</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <header>
+        <section class="wrapper">
+            <div class="left">
+                <h1><a href="{% url 'web:index' %}"><img src="{% static 'images/logo.png' %}" alt="logo"></a></h1>
+            </div>
+            <div class="middle">
+                <form action="">
+                    <div>
+                        <input type="search" placeholder="Search blog...">
+                        <img src="{% static 'images/search.png' %}" alt="search" />
+                    </div>
+                </form>
+            </div>
+            <div class="right">
+                <ul>
+                    <li><a href="{% url 'web:index' %}">Home</a></li>
+                    <li><a href="{% url 'web:create' %}">Create</a></li>
+                    <li><a href="{% url 'web:account' %}">Account</a></li>
+                </ul>
+            </div>
+        </section>
+    </header>
+
+    <section id="create">
+        <section class="wrapper">
+            <h1>Create a new blog</h1>
+            <form action="">
+                <div class="form-control">
+                    <input type="text" placeholder="Enter title">
+                </div>
+                <div class="form-control">
+                    <label for="blog-image">Featured Image:</label>
+                    <input type="file" id="blog-image">
+                </div>
+                <div class="form-control">
+                    <input type="text" placeholder="Enter short description">
+                </div>
+                <div class="form-control">
+                    <select name="" id="">
+                        <option value="Food">Food</option>
+                        <option value="Technology">Technology</option>
+                        <option value="Health">Health</option>
+                    </select>
+                </div>
+                <div class="form-control">
+                    <input type="text" placeholder="Enter tags (seperate using comma)">
+                </div>
+                <div class="form-control">
+                    <textarea name="" id="" cols="30" rows="10" placeholder="Enter blog"></textarea>
+                </div>
+                <div class="btn">
+                    <input type="submit" value="Create">
+                </div>
+            </form>
+        </section>
+    </section>
+
+
+</body>
+</html>
