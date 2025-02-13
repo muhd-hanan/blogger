@@ -1,24 +1,27 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 
-from django.contrib.auth import authenticate ,login as auth_login ,logout
+from django.contrib.auth import authenticate ,login as auth_login ,logout as auth_logout
 from django.contrib.auth.models import User
 from .models import Author
 from django.contrib.auth.decorators import login_required
+from django.http.response import HttpResponseRedirect
 
 # Create your views here.
+
+@login_required(login_url='login/')
 def index(request):
     return render(request, 'index.html')
 
-
+@login_required(login_url='login/')
 def create(request):
     return render(request, 'create.html')
-
+@login_required(login_url='login/')
 def account(request):
     return render(request, 'account.html')
-
+@login_required(login_url='login/')
 def blog(request):
     return render(request, 'blog.html')
-
+@login_required(login_url='login/')
 def register(request):
 
     if request.method =='POST':
@@ -65,9 +68,10 @@ def login(request):
 
         return render(request, 'login.html')
 
+@login_required(login_url='login/')
 def logout(request):
-    pass
-    return render(request, 'logout.html')
+    auth_logout(request)
+    return HttpResponseRedirect(reverse('web:login'))
 
 
 
