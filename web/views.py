@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, reverse
-
+from web.models import Category ,Tag,Author, Blog
 from django.contrib.auth import authenticate ,login as auth_login ,logout as auth_logout
 from django.contrib.auth.models import User
 from .models import Author
@@ -10,7 +10,26 @@ from django.http.response import HttpResponseRedirect
 
 @login_required(login_url='login/')
 def index(request):
-    return render(request, 'index.html')
+    category = Category.objects.all()
+    tag = Tag.objects.all()
+    author = Author.objects.all()
+    blog = Blog.objects.all()
+
+
+    
+    
+
+    context = {
+        'category': category,
+        'tag': tag,
+        'author': author,
+        'blog': blog,
+    
+
+        
+    }
+    return render(request, 'index.html',context=context)
+    
 
 @login_required(login_url='login/')
 def create(request):
@@ -21,7 +40,7 @@ def account(request):
 @login_required(login_url='login/')
 def blog(request):
     return render(request, 'blog.html')
-@login_required(login_url='login/')
+
 def register(request):
 
     if request.method =='POST':

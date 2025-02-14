@@ -36,11 +36,9 @@
     <section id="category">
         <section class="wrapper">
             <ul>
-                <li><a class="active" href="#">Food</a></li>
-                <li><a href="#">Health</a></li>
-                <li><a href="#">Place</a></li>
-                <li><a href="#">Technology</a></li>
-                <li><a href="#">Education</a></li>
+                {% for item in category %}
+                <li><a href="#">{{item.name}}</a></li>
+                {% endfor %}
             </ul>
         </section>
     </section>
@@ -49,101 +47,31 @@
         <section class="wrapper">
             <div class="left">
                 <div class="top">
+                    {% for item in blog %}
                     <div class="card">
-                        <img src="{% static 'images/blog.png' %}" alt="blog-image">
+                        <img src="{{item.image.url}}" alt="blog-image">
                         <h3>
-                            <a href="{% url 'web:blog' %}">Lorem ipsum dolor sit.</a>
+                            <a href="{% url 'web:blog' %}">{{item.heading}}.</a>
                         </h3>
                         <div>
-                            <span>Adil CP</span>
-                            <span>20 May 2023</span>
+                            
+                            <span>{{item.author.user.first_name}}{{author.user.last_name}}</span>
+                            
+                            <span>{{item.date}}</span>
                         </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet voluptate deleniti placeat consectetur optio facere. Expedita, nobis? Minus, numquam harum.</p>
+                        <p>{{item.mini_content}}.</p>
                         <ul>
-                            <li>Food</li>
-                            <li>Healthy</li>
-                            <li>Spicy</li>
-                            <li>Lorem</li>
-                            <li>Spicy</li>
-                            <li>Spicy</li>
+                            {% for tag in item.tag.all %}
+                            <li>{{tag.title}}</li>
+                            {% endfor %}
+                            
                         </ul>
                     </div>
-                    <div class="card">
-                        <img src="{% static 'images/blog.png' %}" alt="blog-image">
-                        <h3>
-                            <a href="blog.html">Lorem ipsum dolor sit.</a>
-                        </h3>
-                        <div>
-                            <span>Adil CP</span>
-                            <span>20 May 2023</span>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet voluptate deleniti placeat consectetur optio facere. Expedita, nobis? Minus, numquam harum.</p>
-                        <ul>
-                            <li>Food</li>
-                            <li>Healthy</li>
-                            <li>Spicy</li>
-                            <li>Lorem</li>
-                            <li>Spicy</li>
-                            <li>Spicy</li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <img src="{% static 'images/blog.png' %}" alt="blog-image">
-                        <h3>
-                            <a href="blog.html">Lorem ipsum dolor sit.</a>
-                        </h3>
-                        <div>
-                            <span>Adil CP</span>
-                            <span>20 May 2023</span>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet voluptate deleniti placeat consectetur optio facere. Expedita, nobis? Minus, numquam harum.</p>
-                        <ul>
-                            <li>Food</li>
-                            <li>Healthy</li>
-                            <li>Spicy</li>
-                            <li>Lorem</li>
-                            <li>Spicy</li>
-                            <li>Spicy</li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <img src="{% static 'images/blog.png' %}" alt="blog-image">
-                        <h3>
-                            <a href="blog.html">Lorem ipsum dolor sit.</a>
-                        </h3>
-                        <div>
-                            <span>Adil CP</span>
-                            <span>20 May 2023</span>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet voluptate deleniti placeat consectetur optio facere. Expedita, nobis? Minus, numquam harum.</p>
-                        <ul>
-                            <li>Food</li>
-                            <li>Healthy</li>
-                            <li>Spicy</li>
-                            <li>Lorem</li>
-                            <li>Spicy</li>
-                            <li>Spicy</li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <img src="{% static 'images/blog.png' %}" alt="blog-image">
-                        <h3>
-                            <a href="blog.html">Lorem ipsum dolor sit.</a>
-                        </h3>
-                        <div>
-                            <span>Adil CP</span>
-                            <span>20 May 2023</span>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet voluptate deleniti placeat consectetur optio facere. Expedita, nobis? Minus, numquam harum.</p>
-                        <ul>
-                            <li>Food</li>
-                            <li>Healthy</li>
-                            <li>Spicy</li>
-                            <li>Lorem</li>
-                            <li>Spicy</li>
-                            <li>Spicy</li>
-                        </ul>
-                    </div>
+                    {% endfor %}
+                    
+                    
+                    
+                    
                 </div>
                 <div class="bottom">
                     <div class="pagination">
@@ -182,34 +110,25 @@
                     </div>
                     <div class="author">
                         <h3>By Author</h3>
+                        {% for author in author %}
                         <div>
                             <input type="checkbox" name="" id="">
-                            <span>Adil cp</span>
+                            <span>{{author.user.first_name}}{{author.user.last_name}}</span>
                         </div>
-                        <div>
-                            <input type="checkbox" name="" id="">
-                            <span>Arun T</span>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="" id="">
-                            <span>Prabin Prakash</span>
-                        </div>
+                        {% endfor %}
+
+
                     </div>
                     <div class="tags">
                         <h3>By Tags</h3>
+                        {% for item in tag %}
                         <div>
                             <input type="checkbox" name="" id="">
-                            <span>Food</span>
+                            <span>{{item.title}}</span>
                         </div>
-                        <div>
-                            <input type="checkbox" name="" id="">
-                            <span>Healthy</span>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="" id="">
-                            <span>Hospital</span>
-                        </div>
-                    </div>
+                        {% endfor %}
+                        
+                    
                     <div class="submit">
                         <input type="submit" value="Filter">
                     </div>

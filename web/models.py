@@ -23,5 +23,3 @@ class Blog(models.Model):
     tag = models.ManyToManyField(Tag)
 
 
-
-    
