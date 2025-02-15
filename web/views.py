@@ -96,7 +96,7 @@ def login(request):
 @login_required(login_url='login/')
 def logout(request):
     auth_logout(request)
-    return HttpResponseRedirect(reverse('web:login'))
+    return redirect(reverse('web:login'))
 
 
 
