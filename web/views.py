@@ -37,9 +37,15 @@ def create(request):
 @login_required(login_url='login/')
 def account(request):
     return render(request, 'account.html')
+
 @login_required(login_url='login/')
-def blog(request):
-    return render(request, 'blog.html')
+def blog(request,id):
+    blog = Blog.objects.get(id=id)
+    context = {
+        'blog': blog
+    }
+
+    return render(request, 'blog.html', context=context)
 
 def register(request):
 

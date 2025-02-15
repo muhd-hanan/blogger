@@ -51,11 +51,11 @@
                     <div class="card">
                         <img src="{{item.image.url}}" alt="blog-image">
                         <h3>
-                            <a href="{% url 'web:blog' %}">{{item.heading}}.</a>
+                            <a href="{% url 'web:blog' item.id %}">{{ item.heading }}.</a>
                         </h3>
                         <div>
+                            <span>{{ item.author.user.first_name }} {{ item.author.user.last_name }}</span>
                             
-                            <span>{{item.author.user.first_name}}{{author.user.last_name}}</span>
                             
                             <span>{{item.date}}</span>
                         </div>

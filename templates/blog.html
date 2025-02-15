@@ -35,22 +35,21 @@
 
     <section id="blog-details">
         <section class="wrapper">
+            
             <div class="left">
-                <h1>Lorem ipsum dolor sit amet consectetur.</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt harum repudiandae minus quasi itaque doloribus at eum aliquam sequi laboriosam?</p>
+                <h1>{{ blog.heading }}.</h1>
+                <p>{{ blog.mini_content }}.</p>
                 <div>
-                    <p>Adil CP</p>
-                    <p>23 May 2023</p>
+                    <p>{{ blog.author.user.first_name }} {{ blog.author.user.last_name }}</p>
+                    <p>{{ blog.date }}</p>
                 </div>
-                <img src="{% static 'images/blog.png' %}" alt="blog">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio perspiciatis commodi nemo voluptas, saepe nihil? Beatae officia dolorem suscipit provident sint fugiat nostrum nemo. Quisquam aliquam error totam nam nulla in pariatur atque dicta ullam sint quod esse veritatis cupiditate, eum eveniet voluptates non tenetur!</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio perspiciatis commodi nemo voluptas, saepe nihil? Beatae officia dolorem suscipit provident sint fugiat nostrum nemo. Quisquam aliquam error totam nam nulla in pariatur atque dicta ullam sint quod esse veritatis cupiditate, eum eveniet voluptates non tenetur!</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio perspiciatis commodi nemo voluptas, saepe nihil? Beatae officia dolorem suscipit provident sint fugiat nostrum nemo. Quisquam aliquam error totam nam nulla in pariatur atque dicta ullam sint quod esse veritatis cupiditate, eum eveniet voluptates non tenetur!</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio perspiciatis commodi nemo voluptas, saepe nihil? Beatae officia dolorem suscipit provident sint fugiat nostrum nemo. Quisquam aliquam error totam nam nulla in pariatur atque dicta ullam sint quod esse veritatis cupiditate, eum eveniet voluptates non tenetur!</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio perspiciatis commodi nemo voluptas, saepe nihil? Beatae officia dolorem suscipit provident sint fugiat nostrum nemo. Quisquam aliquam error totam nam nulla in pariatur atque dicta ullam sint quod esse veritatis cupiditate, eum eveniet voluptates non tenetur!</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio perspiciatis commodi nemo voluptas, saepe nihil? Beatae officia dolorem suscipit provident sint fugiat nostrum nemo. Quisquam aliquam error totam nam nulla in pariatur atque dicta ullam sint quod esse veritatis cupiditate, eum eveniet voluptates non tenetur!</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio perspiciatis commodi nemo voluptas, saepe nihil? Beatae officia dolorem suscipit provident sint fugiat nostrum nemo. Quisquam aliquam error totam nam nulla in pariatur atque dicta ullam sint quod esse veritatis cupiditate, eum eveniet voluptates non tenetur!</p>
+                <img src="{{ blog.image.url }}" alt="blog">
+                <p>{{ blog.content }}</p>
             </div>
+           
+
+
+
             <div class="right">
                 <h3>Recent Blogs</h3>
                 <div>
