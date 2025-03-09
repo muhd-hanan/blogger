@@ -36,29 +36,32 @@
     <section id="create">
         <section class="wrapper">
             <h1>Create a new blog</h1>
-            <form action="">
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
                 <div class="form-control">
-                    <input type="text" placeholder="Enter title">
+                    <input type="text" placeholder="Enter title" name="title">
                 </div>
                 <div class="form-control">
                     <label for="blog-image">Featured Image:</label>
-                    <input type="file" id="blog-image">
+                    <input type="file" name="image">
                 </div>
                 <div class="form-control">
-                    <input type="text" placeholder="Enter short description">
+                    <input type="text" placeholder="Enter short description" name="description">
                 </div>
                 <div class="form-control">
-                    <select name="" id="">
-                        <option value="Food">Food</option>
-                        <option value="Technology">Technology</option>
-                        <option value="Health">Health</option>
+                    <select name="category" id="">
+                        {% for category in categories %}
+                        <option value="{{category.id}}">{{category.name}}</option>
+                        <!-- <option value="Technology">Technology</option>
+                        <option value="Health">Health</option> -->
+                        {% endfor %}
                     </select>
                 </div>
+                <!-- <div class="form-control">
+                    <input type="text" placeholder="Enter tags (seperate using comma)" name="tags">
+                </div> -->
                 <div class="form-control">
-                    <input type="text" placeholder="Enter tags (seperate using comma)">
-                </div>
-                <div class="form-control">
-                    <textarea name="" id="" cols="30" rows="10" placeholder="Enter blog"></textarea>
+                    <textarea name="description_big" id="" cols="30" rows="10" placeholder="Enter blog"></textarea>
                 </div>
                 <div class="btn">
                     <input type="submit" value="Create">
@@ -68,5 +71,7 @@
     </section>
 
 
+
 </body>
 </html>
+

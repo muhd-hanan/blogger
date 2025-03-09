@@ -99,6 +99,46 @@ def logout(request):
     return redirect(reverse('web:login'))
 
 
+@login_required(login_url='login/')
+def create(request):
+    user = request.user
+    author = Author.objects.get(user=user)
+    categories = Category.objects.all()
+    
+    if request.method == 'POST':
+        heading = request.POST.get('title')  # Corrected name from 'headings' to 'title'
+        image = request.FILES.get('image')  
+        mini_content = request.POST.get('description')  # Corrected name from 'mini_content'
+        category_id = request.POST.get('category')
+        content = request.POST.get('description_big')  # Corrected name from 'content'
+
+        if not heading:  # Ensure heading is not empty
+            messages.error(request, "Title is required.")
+            return render(request, 'create.html', {'categories': categories})
+
+        try:
+            category = Category.objects.get(id=category_id)
+        except Category.DoesNotExist:
+            messages.error(request, "Invalid category.")
+            return render(request, 'create.html', {'categories': categories})
+
+        # Create blog post
+        blog = Blog.objects.create(
+            heading=heading,
+            image=image,
+            mini_content=mini_content,
+            category=category,
+            content=content,
+            author=author,
+        )
+        
+        return redirect('web:index')
+    
+    else:        
+        return render(request, 'create.html', {'categories': categories})
 
 
 
+    
+
+    
