@@ -129,22 +129,14 @@ def create(request):
         category_id = request.POST.get('category')
         content = request.POST.get('description_big')  
 
-        if not heading:  
-            messages.error(request, "Title is required.")
-            return render(request, 'create.html', {'categories': categories})
-
-        try:
-            category = Category.objects.get(id=category_id)
-        except Category.DoesNotExist:
-            messages.error(request, "Invalid category.")
-            return render(request, 'create.html', {'categories': categories})
+        
 
        
         blog = Blog.objects.create(
             heading=heading,
             image=image,
             mini_content=mini_content,
-            category=category,
+            category_id=category_id,
             content=content,
             author=author,
         )
@@ -157,8 +149,8 @@ def create(request):
 
 @login_required(login_url='login/')
 def edit(request,id):
-    user = request.user
-    author = Author.objects.get(user=user)
+   
+   
     categories = Category.objects.all()
     blog = Blog.objects.get(id=id)
     
@@ -178,7 +170,7 @@ def edit(request,id):
             mini_content=mini_content,
             category=category_id,
             content=content,
-            author=author,
+            
         )
         
         return redirect('web:index')
@@ -187,4 +179,24 @@ def edit(request,id):
         return render(request, 'create.html', {'categories': categories})
     
 
+@login_required(login_url='login/')
+def edit(request, id):
+    blog = Blog.objects.get(id=id)  
+    categories = Category.objects.all()  
     
+    if request.method == 'POST':
+        blog.heading = request.POST.get('title')  
+        blog.mini_content = request.POST.get('description')  
+        blog.category_id = request.POST.get('category') 
+        blog.content = request.POST.get('description_big')  
+
+        if request.FILES.get('image'): 
+            blog.image = request.FILES.get('image')  
+
+        blog.save()  
+        
+        return redirect('web:account')  
+    
+
+    return render(request, 'create.html', {'blog': blog, 'categories': categories})
+
