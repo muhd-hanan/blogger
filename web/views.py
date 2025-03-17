@@ -34,9 +34,26 @@ def index(request):
 @login_required(login_url='login/')
 def create(request):
     return render(request, 'create.html')
+
 @login_required(login_url='login/')
 def account(request):
-    return render(request, 'account.html')
+    user = request.user
+    author = Author.objects.get(user=user)
+    blog = Blog.objects.filter(author=author)  
+
+    context = {
+        'author': author,
+        'blog': blog,
+              
+    }
+
+    return render(request, 'account.html',context=context)
+
+def delete(request, id):
+    blog = Blog.objects.get(id=id)
+   
+    blog.delete()
+    return redirect('web:index')
 
 @login_required(login_url='login/')
 def blog(request,id):
@@ -106,13 +123,13 @@ def create(request):
     categories = Category.objects.all()
     
     if request.method == 'POST':
-        heading = request.POST.get('title')  # Corrected name from 'headings' to 'title'
+        heading = request.POST.get('title') 
         image = request.FILES.get('image')  
-        mini_content = request.POST.get('description')  # Corrected name from 'mini_content'
+        mini_content = request.POST.get('description')  
         category_id = request.POST.get('category')
-        content = request.POST.get('description_big')  # Corrected name from 'content'
+        content = request.POST.get('description_big')  
 
-        if not heading:  # Ensure heading is not empty
+        if not heading:  
             messages.error(request, "Title is required.")
             return render(request, 'create.html', {'categories': categories})
 
@@ -122,7 +139,7 @@ def create(request):
             messages.error(request, "Invalid category.")
             return render(request, 'create.html', {'categories': categories})
 
-        # Create blog post
+       
         blog = Blog.objects.create(
             heading=heading,
             image=image,
@@ -138,7 +155,36 @@ def create(request):
         return render(request, 'create.html', {'categories': categories})
 
 
+@login_required(login_url='login/')
+def edit(request,id):
+    user = request.user
+    author = Author.objects.get(user=user)
+    categories = Category.objects.all()
+    blog = Blog.objects.get(id=id)
+    
+    if request.method == 'POST':
+        heading = request.POST.get('title') 
+        image = request.FILES.get('image')  
+        mini_content = request.POST.get('description')  
+        category_id = request.POST.get('category')
+        content = request.POST.get('description_big')  
 
+        
+
+       
+        blog = Blog.objects.create(
+            heading=heading,
+            image=image,
+            mini_content=mini_content,
+            category=category_id,
+            content=content,
+            author=author,
+        )
+        
+        return redirect('web:index')
+    
+    else:        
+        return render(request, 'create.html', {'categories': categories})
     
 
     

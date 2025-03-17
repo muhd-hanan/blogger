@@ -51,118 +51,32 @@
                     </tr>
                 </thead>
                 <tbody>
+
+                    {% for item in blog %}
                     <tr>
+
                         <td>
-                            <img src="{% static './images/blog.png' %}" alt="blog">
+                            <img src="{{item.image.url}}" alt="blog">
                         </td>
-                        <td>Lorem ipsum dolor sit amet consectetur.</td>
-                        <td>12 May 2023</td>
+                        <td>{{ item.heading }}</td>
+                        <td>{{item.date}}</td>
                         <td>
-                            <a href="#" class="view">View</a>
-                        </td>
-                        <td>
-                            <a href="#" class="edit">Edit</a>
+                            <a href="{% url 'web:blog' item.id %}" class="view">View</a>
                         </td>
                         <td>
-                            <a href="#" class="delete">Delete</a>
+                            <a href="{% url 'web:edit' id=item.id %}" class="edit">Edit</a>
+                        </td>
+                        <td>
+                            <a href="{% url 'web:delete' id=item.id %}" class="delete">Delete</a>
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-                            <img src="{% static './images/blog.png' %}" alt="blog">
-                        </td>
-                        <td>Lorem ipsum dolor sit amet consectetur.</td>
-                        <td>12 May 2023</td>
-                        <td>
-                            <a href="#" class="view">View</a>
-                        </td>
-                        <td>
-                            <a href="#" class="edit">Edit</a>
-                        </td>
-                        <td>
-                            <a href="#" class="delete">Delete</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img src="{% static './images/blog.png' %}" alt="blog">
-                        </td>
-                        <td>Lorem ipsum dolor sit amet consectetur.</td>
-                        <td>12 May 2023</td>
-                        <td>
-                            <a href="#" class="view">View</a>
-                        </td>
-                        <td>
-                            <a href="#" class="edit">Edit</a>
-                        </td>
-                        <td>
-                            <a href="#" class="delete">Delete</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img src="{% static './images/blog.png' %}" alt="blog">
-                        </td>
-                        <td>Lorem ipsum dolor sit amet consectetur.</td>
-                        <td>12 May 2023</td>
-                        <td>
-                            <a href="#" class="view">View</a>
-                        </td>
-                        <td>
-                            <a href="#" class="edit">Edit</a>
-                        </td>
-                        <td>
-                            <a href="#" class="delete">Delete</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img src="{% static './images/blog.png' %}" alt="blog">
-                        </td>
-                        <td>Lorem ipsum dolor sit amet consectetur.</td>
-                        <td>12 May 2023</td>
-                        <td>
-                            <a href="#" class="view">View</a>
-                        </td>
-                        <td>
-                            <a href="#" class="edit">Edit</a>
-                        </td>
-                        <td>
-                            <a href="#" class="delete">Delete</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img src="{% static './images/blog.png' %}" alt="blog">
-                        </td>
-                        <td>Lorem ipsum dolor sit amet consectetur.</td>
-                        <td>12 May 2023</td>
-                        <td>
-                            <a href="#" class="view">View</a>
-                        </td>
-                        <td>
-                            <a href="#" class="edit">Edit</a>
-                        </td>
-                        <td>
-                            <a href="#" class="delete">Delete</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img src="{% static './images/blog.png' %}" alt="blog">
-                        </td>
-                        <td>Lorem ipsum dolor sit amet consectetur.</td>
-                        <td>12 May 2023</td>
-                        <td>
-                            <a href="#" class="view">View</a>
-                        </td>
-                        <td>
-                            <a href="#" class="edit">Edit</a>
-                        </td>
-                        <td>
-                            <a href="#" class="delete">Delete</a>
-                        </td>
-                    </tr>
+                    {% endfor %}
+                    
+                   
+                    
+                    
+                    
+                    
                 </tbody>
             </table>
             <div class="bottom">
